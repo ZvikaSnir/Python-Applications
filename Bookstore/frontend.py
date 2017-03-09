@@ -28,7 +28,7 @@ def search_command():
 def add_command():
     backend.insert(titleText.get(),authorText.get(),yearText.get(),isbnText.get())
     booklist.delete(0,END)
-    booklist.insert(END,(titleText.get(),authorText.get(),yearText.get(),isbnText.get()))
+    booklist.insert(END,("#",titleText.get(),authorText.get(),yearText.get(),isbnText.get()))
 
 
 def update_command():

@@ -31,7 +31,9 @@ while True:
         status=1
         (x, y, w, h)=cv2.boundingRect(contour)
         cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),3)
+
     status_list.append(status)
+    status_list=status_list[-2:]
 
     if status_list[-1]==1 and status_list[-2]==0:
         times.append(datetime.now())
@@ -49,7 +51,6 @@ while True:
         if status == 1:
             times.append(datetime.now())
         break
-
 
 print(status_list)
 print(times)
